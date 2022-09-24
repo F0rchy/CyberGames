@@ -25,5 +25,3 @@ public class MainController {
         return "about";
     }
 }
-
-//test
