@@ -1,4 +1,4 @@
-package com.forchy.CyberGames;
+package com.forchy.cyberGames;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
