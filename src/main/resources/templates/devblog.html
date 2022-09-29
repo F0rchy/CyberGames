@@ -15,8 +15,8 @@
     <h1 th:text="${title}"></h1>
     <div th:each="el : ${post}" class="alert alert-info mt-2">
         <h3 th:text="${el.title}"/>
-        <p th:text="${el.full_text}" style="word-wrap: break-word"/>
-        <p th:text="${el.actionDate}"/>
+        <p th:text="${el.full_text}" style="word-wrap: break-word; white-space: pre-wrap"/>
+        <p th:text="${el.actionDate}" style="font-size: 12px"/>
         <a th:href="'/devblog/' + ${el.id} + '/edit'" class="btn btn-warning">Редактировать</a><br><br>
         <form th:action="'/devblog/' + ${el.id} + '/remove'" method="post">
             <button class="btn btn-warning" type="submit">Удалить</button>

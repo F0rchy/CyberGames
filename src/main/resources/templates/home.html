@@ -13,11 +13,11 @@
 <!-- Содержание -->
 <div class="container mt-5">
     <h1 th:text="${title}"></h1>
-    <div th:each="el : ${posts}" class="alert alert-info mt-2">
-        <h3 th:text="${el.title}"/>
-        <p th:text="${el.anons}"/>
-        <p th:text="${el.actionDate}"/>
-        <a th:href="'/devblog/' + ${el.id}" class="btn btn-warning">Детальнее</a>
+    <div th:each="i : ${#numbers.sequence(posts.size() - 1, 0, -1)}" class="alert alert-info mt-2">
+        <h3 th:text="${posts[i].title}"/>
+        <p th:text="${posts[i].anons}"/>
+        <p th:text="${posts[i].actionDate}" style="font-size: 12px"/>
+        <a th:href="'/devblog/' + ${posts[i].id}" class="btn btn-warning">Детальнее</a>
     </div>
 </div>
 
