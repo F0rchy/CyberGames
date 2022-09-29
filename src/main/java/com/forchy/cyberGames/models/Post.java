@@ -1,9 +1,6 @@
 package com.forchy.cyberGames.models;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.time.LocalDateTime;
 
 @Entity
@@ -13,7 +10,9 @@ public class Post {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    private String title, anons, full_text;
+    private String title, anons;
+    @Lob
+    private String full_text;
     private LocalDateTime actionDate;
 
     public Long getId() {
@@ -63,5 +62,6 @@ public class Post {
         this.title = title;
         this.anons = anons;
         this.full_text = full_text;
+
     }
 }
