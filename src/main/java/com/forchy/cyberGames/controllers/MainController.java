@@ -27,6 +27,7 @@ public class MainController {
 
     @GetMapping("/devblog/add")
     public String devblogAdd(Model model) {
+        model.addAttribute("title", "Добавление новости");
         return "devblog-add";
     }
 
@@ -39,6 +40,7 @@ public class MainController {
 
     @GetMapping("/devblog/{id}")
     public String devblogDetails(@PathVariable(value = "id") long id, Model model) {
+        model.addAttribute("title", "Детальнее");
         if(!postRepository.existsById(id)) {
             return "redirect:/";
         }
@@ -51,6 +53,7 @@ public class MainController {
 
     @GetMapping("/devblog/{id}/edit")
     public String devblogEdit(@PathVariable(value = "id") long id, Model model) {
+        model.addAttribute("title", "Изменить запись");
         if(!postRepository.existsById(id)) {
             return "redirect:/";
         }

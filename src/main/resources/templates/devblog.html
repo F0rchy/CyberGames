@@ -12,7 +12,6 @@
 
 <!-- Содержание -->
 <div class="container mt-5">
-    <h1 th:text="${title}"></h1>
     <div th:each="el : ${post}" class="alert alert-info mt-2">
         <h3 th:text="${el.title}"/>
         <p th:text="${el.full_text}" style="word-wrap: break-word; white-space: pre-wrap"/>
